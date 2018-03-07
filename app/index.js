@@ -7,11 +7,11 @@ const port = 3000;
 app.engine('.hbs', hbs({
     defaultLayout: 'main',
     extname: 'hbs',
-    layoutsDir: path.join(__dirname,'../views/layouts')
+    layoutsDir: path.join(__dirname,'web/views/layouts')
 }));
 
 app.set('view engine', '.hbs');
-app.set('views', path.join(__dirname, '../views'));
+app.set('views', path.join(__dirname, 'web/views'));
 
 app.get('/', (request, response) => {
     response.render('home', {
