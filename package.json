@@ -1,0 +1,23 @@
+{
+  "name": "workfromaddin",
+  "version": "1.0.0",
+  "description": "A NodeJS application for finding and associating a WorkFrom location with a meeting in Office 365 for a specific user",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjsummersjr/workfromaddin.git"
+  },
+  "author": "Paul Summers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pjsummersjr/workfromaddin/issues"
+  },
+  "homepage": "https://github.com/pjsummersjr/workfromaddin#readme"
+}
