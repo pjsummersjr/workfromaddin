@@ -1,1 +1,11 @@
-<h2>Welcome, {{name}} to the WorkFrom with Office 365</h2>
+<div class="ms-Grid">
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-sm6 ms-md8 ms-lg8 hiddenSm">&nbsp;</div>
+        <div class="ms-Grid-col ms-sm12 ms-md4 ms-lg4">{{#if loggedIn}}{{name}}{{else}}<a href="auth/login">Login</a>{{/if}}</div>
+    </div>
+    <div class="ms-Grid-row">
+        <div class="ms-Grid-col ms-sm8">
+            <h2>WorkFrom with Office 365</h2>
+        </div>
+    </div>
+</div>

@@ -16,11 +16,12 @@ app.engine('.hbs', hbs({
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'web/views'));
 
+app.use(express.static(__dirname + '/web/public'));
 app.use('/api', apiRouter);
 
 app.get('/', (request, response) => {
     response.render('home', {
-        name: 'Paul Summers'
+        loggedIn: false
     })
 });
 
