@@ -1,6 +1,7 @@
 const path  = require('path');
 const express = require('express');
 const hbs = require('express-handlebars');
+const places = require('./workfrom/places');
 const app = express();
 const port = 3000;
 
@@ -14,6 +15,7 @@ app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'web/views'));
 
 app.get('/', (request, response) => {
+    places.getPlacesByZipCode("01803");
     response.render('home', {
         name: 'Paul Summers'
     });
