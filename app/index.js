@@ -15,10 +15,19 @@ app.engine('.hbs', hbs({
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'web/views'));
 
-app.get('/:zip', (request, response) => {
-    places.getPlacesByZipCode(request.params.zip, workFromAppId);
+app.get('/', (request, response) => {
     response.render('home', {
         name: 'Paul Summers'
+    })
+});
+
+app.get('/api/:zip', (request, response) => {
+    places.getPlacesByZipCode(request.params.zip, workFromAppId)
+    .then((data) => {
+        response.send(data);
+    })
+    .catch((err) => {
+        response.send(err);
     });
 });
 
