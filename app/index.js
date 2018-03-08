@@ -1,5 +1,7 @@
 const path  = require('path');
 const express = require('express');
+const https = require('https');
+const fs = require('fs');
 const hbs = require('express-handlebars');
 const places = require('./workfrom/places');
 const apiRouter = require('./workfrom/apiRouting');
@@ -29,13 +31,17 @@ app.get('/', (request, response) => {
     })
 });
 
+const httpsOptions = {
+    key: fs.readFileSync('./cert/key.pem'),
+    cert: fs.readFileSync('./cert/cert.pem')
+}
 
-app.listen(port, (err) => {
+const server = https.createServer(httpsOptions, app).listen(port, (err) => {
     if(err){
         return log.error("Error starting application" , err);
     }
 
     log.info("Express server running on port ${port}");
-})
+});
 
 module.exports.app = app;
